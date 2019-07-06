@@ -106,8 +106,8 @@ function Test-ManagedServices_CRUD
 	$principalId = "d6f6c88a-5b7a-455e-ba40-ce146d4d3671";
 	$subscriptionId = "002b3477-bfbf-4402-b377-6003168b75d3"
 	$name = getAssetName
-	$assignmentId = "846b8de3-400b-4e89-b1f4-5bb7b73f12be";
-	$definitionId = "e7d4730c-b52a-42b4-b974-6772d88cf7c6"
+	$assignmentId = "d61d06fe-a6a1-47dc-a51d-0ec6241f18cc";
+	$definitionId = "92204662-68ad-468a-98f8-43b45a57ddde"
 
 	#put def
 	$definition = New-AzManagedServicesDefinitionWithId -ManagedByTenantId $managedByTenantId -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -Name $name -RegistrationDefinitionId $definitionId
@@ -153,5 +153,4 @@ function Test-ManagedServices_CRUD
 	{
 		Assert-AreNotEqual($definitionId, $definition.Name)
 	}
-
 }
