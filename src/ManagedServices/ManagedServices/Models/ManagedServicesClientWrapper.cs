@@ -55,9 +55,8 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
         {
             return this.ManagedServicesClient.RegistrationAssignments.Get(
                 scope: scope,
-                registratonAssignmentId: registrationAssignmentId,
-                expandRegistrationDefinition: expandRegistrationDefinition,
-                apiVersion: API_VERSION);
+                registrationAssignmentId: registrationAssignmentId,
+                expandRegistrationDefinition: expandRegistrationDefinition);
         }
 
         public IPage<RegistrationAssignment> ListRegistrationAssignments(
@@ -66,7 +65,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
         {
             return this.ManagedServicesClient.RegistrationAssignments.List(
                 scope: scope,
-                apiVersion: API_VERSION,
                 expandRegistrationDefinition: expandRegistrationDefinition);
         }
 
@@ -85,19 +83,17 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
 
             return this.ManagedServicesClient.RegistrationAssignments.CreateOrUpdate(
                 scope: scope,
-                registratonAssignmentId: registrationAssignmentId.ToString(),
-                requestBody: registrationAssignment,
-                apiVersion: API_VERSION);
+                registrationAssignmentId: registrationAssignmentId.ToString(),
+                requestBody: registrationAssignment);
         }
 
-        public RegistrationAssignment RemoveRegistrationAssignment(
+        public void RemoveRegistrationAssignment(
             string scope, 
             string registrationAssignmentId)
         {
-            return this.ManagedServicesClient.RegistrationAssignments.Delete(
+            this.ManagedServicesClient.RegistrationAssignments.Delete(
                 scope: scope,
-                registratonAssignmentId: registrationAssignmentId,
-                apiVersion: API_VERSION);
+                registrationAssignmentId: registrationAssignmentId);
         }
 
         #endregion
@@ -111,16 +107,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
         {
             return this.ManagedServicesClient.RegistrationDefinitions.CreateOrUpdate(
                 scope: scope,
-                registratonDefinitionId: registratonDefinitionId.ToString(),
-                requestBody: registrationDefinition,
-                apiVersion: API_VERSION);
+                registrationDefinitionId: registratonDefinitionId.ToString(),
+                requestBody: registrationDefinition);
         }
 
         public IPage<RegistrationDefinition> ListRegistrationDefinitions(string scope)
         {
             return this.ManagedServicesClient.RegistrationDefinitions.List(
-                scope: scope,
-                apiVersion: API_VERSION);
+                scope: scope);
         }
 
         public RegistrationDefinition GetRegistrationDefinition(
@@ -129,18 +123,16 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
         {
             return this.ManagedServicesClient.RegistrationDefinitions.Get(
                 scope: scope,
-                registratonDefinitionId: registrationDefinitionId,
-                apiVersion: API_VERSION);
+                registrationDefinitionId: registrationDefinitionId);
         }
 
-        public RegistrationDefinition RemoveRegistrationDefinition(
+        public void RemoveRegistrationDefinition(
             string scope    , 
             string registrationDefinitionId)
         {
-            return this.ManagedServicesClient.RegistrationDefinitions.Delete(
+            this.ManagedServicesClient.RegistrationDefinitions.Delete(
                     scope: scope,
-                    registratonDefinitionId: registrationDefinitionId,
-                    apiVersion: API_VERSION);
+                    registrationDefinitionId: registrationDefinitionId);
         }
 
         #endregion
