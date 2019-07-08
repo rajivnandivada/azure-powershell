@@ -57,7 +57,9 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
             return this.ManagedServicesClient.RegistrationAssignments.GetAsync(
                 scope: scope,
                 registrationAssignmentId: registrationAssignmentId,
-                expandRegistrationDefinition: expandRegistrationDefinition).Result;
+                expandRegistrationDefinition: expandRegistrationDefinition)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public IPage<RegistrationAssignment> ListRegistrationAssignments(
@@ -66,7 +68,9 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
         {
             return this.ManagedServicesClient.RegistrationAssignments.ListAsync(
                 scope: scope,
-                expandRegistrationDefinition: expandRegistrationDefinition).Result;
+                expandRegistrationDefinition: expandRegistrationDefinition)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public RegistrationAssignment CreateOrUpdateRegistrationAssignment(
@@ -85,16 +89,20 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
             return this.ManagedServicesClient.RegistrationAssignments.CreateOrUpdateAsync(
                 scope: scope,
                 registrationAssignmentId: registrationAssignmentId.ToString(),
-                requestBody: registrationAssignment).Result;
+                requestBody: registrationAssignment)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public void RemoveRegistrationAssignment(
-            string scope, 
+            string scope,
             string registrationAssignmentId)
         {
             this.ManagedServicesClient.RegistrationAssignments.DeleteAsync(
                 scope: scope,
-                registrationAssignmentId: registrationAssignmentId).GetAwaiter().GetResult();
+                registrationAssignmentId: registrationAssignmentId)
+                .GetAwaiter()
+                .GetResult();
         }
 
         #endregion
@@ -109,31 +117,39 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models
             return this.ManagedServicesClient.RegistrationDefinitions.CreateOrUpdateAsync(
                 scope: scope,
                 registrationDefinitionId: registratonDefinitionId.ToString(),
-                requestBody: registrationDefinition).Result;
+                requestBody: registrationDefinition)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public IPage<RegistrationDefinition> ListRegistrationDefinitions(string scope)
         {
             return this.ManagedServicesClient.RegistrationDefinitions.ListAsync(
-                scope: scope).Result;
+                scope: scope)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public RegistrationDefinition GetRegistrationDefinition(
-            string scope, 
+            string scope,
             string registrationDefinitionId)
         {
             return this.ManagedServicesClient.RegistrationDefinitions.GetAsync(
                 scope: scope,
-                registrationDefinitionId: registrationDefinitionId).Result;
+                registrationDefinitionId: registrationDefinitionId)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public void RemoveRegistrationDefinition(
-            string scope    , 
+            string scope,
             string registrationDefinitionId)
         {
             this.ManagedServicesClient.RegistrationDefinitions.DeleteAsync(
                     scope: scope,
-                    registrationDefinitionId: registrationDefinitionId).GetAwaiter().GetResult();
+                    registrationDefinitionId: registrationDefinitionId)
+                    .GetAwaiter()
+                    .GetResult();
         }
 
         #endregion

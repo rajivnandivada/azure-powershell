@@ -106,8 +106,8 @@ function Test-ManagedServices_CRUD
 	$principalId = "d6f6c88a-5b7a-455e-ba40-ce146d4d3671";
 	$subscriptionId = "002b3477-bfbf-4402-b377-6003168b75d3"
 	$name = getAssetName
-	$assignmentId = "d61d06fe-a6a1-47dc-a51d-0ec6241f18cc";
-	$definitionId = "92204662-68ad-468a-98f8-43b45a57ddde"
+	$assignmentId = "8af8768c-73c2-4993-86ae-7a45c9b232c6";
+	$definitionId = "1ccdb215-959a-48b9-bd7c-0584d461ea6c"
 
 	#put def
 	$definition = New-AzManagedServicesDefinitionWithId -ManagedByTenantId $managedByTenantId -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -Name $name -RegistrationDefinitionId $definitionId

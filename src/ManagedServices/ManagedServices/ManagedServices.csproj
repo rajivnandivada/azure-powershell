@@ -1,14 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <PsModuleName>ManagedServices</PsModuleName>
+    <AssemblyName>s</AssemblyName>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)..\..\Az.props" />
 
   <!--https://www.nuget.org/packages/Microsoft.Azure.Management.ManagedServices-->
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Management.ManagedServices" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Azure.Management.ManagedServices" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="help\" />
